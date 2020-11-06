@@ -1,0 +1,117 @@
+@media (max-device-width : 768px) {
+    .auth-page {
+        display: grid;
+        grid-template-areas: 
+        ".  .            ."
+        ".  auth-window  ."
+        ".  info-desk    ."
+        ".  .            .";
+        grid-template-rows: 10% 80% 60% 10%;
+        grid-template-columns: 1fr 70% 1fr;
+        grid-gap: 10px;
+        margin: 0;
+    
+        
+    
+    }
+}
+@media (min-device-width : 768px) {
+    .auth-page {
+        display: grid;
+        grid-template-areas: 
+        ".  .            .          ."
+        ".  auth-window  info-desk  ."
+        ".  auth-window  info-desk  ."
+        ".  .            .          .";
+        grid-template-rows: 40% 60% 60% 30%;
+        grid-template-columns: 1fr 35% 35% 1fr;
+        grid-gap: 10px;
+        margin: 0;
+
+       
+
+    }
+}
+body {
+    background: #f0f0f0;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+p h1{
+    margin: 0px;
+
+} 
+
+.auth-window {
+    display: grid;
+    grid-area: auth-window;
+    grid-template-areas: 
+    "input-box          input-box "
+    "registration-link  button-box";
+
+    border: 1px solid black;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+}
+.auth-window h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 28px;
+
+}
+.input-box {
+    grid-area: input-box;
+
+}
+.input-box span {
+    color: #8c8c8c;
+    font-size: 18px;
+}
+.input-box input{
+    margin: 5px;
+    width: 80%;
+    height: 40px;
+    border: 0;
+    border-bottom: 1px solid #8c8c8c;
+    outline: 0;  
+
+}
+.registration-link {
+    grid-area: registration-link;
+
+
+}
+.registration-link a{
+    text-decoration: none;
+    color: #000000;
+}
+.button-box {
+    grid-area: button-box;
+}
+button {
+    margin: 5px;
+    width: 81%;
+    height: 50px;
+    border-radius: 40px;
+    outline: 0;  
+    border: 0;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    
+}
+button:hover {
+    color: black;
+    background-color: #8c8c8c;
+    transition: all 0.4s;
+}
+
+.info-desk {
+    grid-area: info-desk;
+    border: 1px solid black;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+    padding: 5px;
+}
+
