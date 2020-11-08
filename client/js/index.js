@@ -15,8 +15,8 @@
 (function () {
     function init() {
         var router = new Router([
-            new Route('auth', 'authPage.html'),            
-            new Route('main', 'mainPage.html')
+            new Route('auth', authPage),            
+            new Route('main', mainPage, true)
         ]);
     }
     init();
