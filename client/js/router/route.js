@@ -13,6 +13,7 @@ Route.prototype = {
     name: undefined,
     htmlName: undefined,
     default: undefined,
+    used: 0,
     constructor: function (name, htmlName, defaultRoute) {
         this.name = name;
         this.htmlName = htmlName;

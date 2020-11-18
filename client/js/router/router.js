@@ -21,7 +21,6 @@ Router.prototype = {
         let r = this.routes;
         (function(scope, r) { 
             window.addEventListener('hashchange', function (e) {
-                console.log(scope)
                 scope.hasChanged(scope, r);
             });
         })(this, r);
@@ -32,24 +31,25 @@ Router.prototype = {
             for (let i = 0, length = r.length; i < length; i++) {
                 let route = r[i];
                 if(route.isActiveRoute(window.location.hash.substr(1))) {
-                    scope.goToRoute(route.htmlName);
+                    scope.goToRoute(route);
                 }
             }
         } else {
             for (let i = 0, length = r.length; i < length; i++) {
                 let route = r[i];
                 if(route.default) {
-                    scope.goToRoute(route.htmlName);
+                    scope.goToRoute(route);
                 }
             }
         }
     },
 
-    goToRoute: function (htmlName) {
+    goToRoute: function (route) {
         (function(scope) { 
         
-            scope.rootElem.innerHTML = htmlName;
-        
+            console.log(route);
+            console.log(route.htmlName.render());
+            
         })(this);
     }
 };

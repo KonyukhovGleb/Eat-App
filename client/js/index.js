@@ -1,22 +1,29 @@
-// const emailInput = document.getElementById("input-email");
-// const passwordInput = document.getElementById("input-password");
-// const buttonLogin = document.getElementById("button-login");
+
+let authPageContainer = new AuthPageContainer("app", "auth-page") 
+let mainPageContainer = new MainPageContainer("app", "main-page")
 
 
-// buttonLogin.onclick = function(event) {
-//     event.preventDefault();
-    
-//     console.log(window.location.hash)
-// }
+let params = {
+    type: "formComponent",
+}
 
-// console.log(buttonLogin);
+let authForm = new AuthForm(null, "auth-page", params);
+let infoDesk = new InfoDesk(null, "auth-page", params)
+let windowUserInfo = new WindowUserInfo(null, "main-page", params);
+
+authPageContainer.insert(authForm);
+authPageContainer.insert(infoDesk);
+mainPageContainer.insert(windowUserInfo);
+// authPageContainer.render()
+
 
 
 (function () {
     function init() {
-        var router = new Router([
-            new Route('auth', authPage),            
-            new Route('main', mainPage, true)
+        let router = new Router([
+            new Route('auth', authPageContainer, true),            
+            new Route('main', mainPageContainer),
+
         ]);
     }
     init();
