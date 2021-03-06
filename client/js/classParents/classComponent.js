@@ -1,8 +1,26 @@
 class Component {
-    constructor(props, parentNode, params) {
-        this.props = props;
+    constructor(props, parentNode, selfNode) {
         this.parentNode = parentNode;
-        this.params = params;
+        this.selfNode = selfNode;
+        this.props = props;
     }
 
+    renderSelf() {
+        let parentNodeDOM = document.getElementById(this.parentNode);
+
+        parentNodeDOM.innerHTML = '';
+
+        let selfNodeDOM = document.createElement("div");
+        selfNodeDOM.id = this.selfNode;
+        selfNodeDOM.className = this.selfNode;
+       
+        parentNodeDOM.insertAdjacentElement("beforeend", selfNodeDOM);
+
+        this.render()    
+    }
+
+    render() {
+        console.log("render")
+    }
+    
 }

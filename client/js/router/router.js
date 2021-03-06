@@ -46,9 +46,8 @@ Router.prototype = {
 
     goToRoute: function (route) {
         (function(scope) { 
-        
-            console.log(route);
-            console.log(route.htmlName.render());
+    
+            route.htmlName.renderSelf();
             
         })(this);
     }

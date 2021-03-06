@@ -9,6 +9,7 @@ function start(router, handle) {
         
         request.on('data', function(chunk) {
             data += chunk.toString();
+            console.log(chunk);
         });
         
         request.on('end', function() {

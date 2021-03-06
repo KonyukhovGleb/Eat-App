@@ -1,5 +1,5 @@
 @media (max-device-width : 768px) {
-    .auth-page {
+    .auth-page-container {
         display: grid;
         grid-template-areas: 
         ".  .            ."
@@ -16,7 +16,7 @@
     }
 }
 @media (min-device-width : 768px) {
-    .auth-page {
+    .auth-page-container {
         display: grid;
         grid-template-areas: 
         ".  .            .          ."
@@ -33,7 +33,7 @@
     }
 }
 body {
-    background: #f0f0f0;
+    background: #222629;
     font-family: 'Rubik', sans-serif;
 }
 
@@ -52,12 +52,15 @@ p h1{
 
     border: 1px solid black;
     text-align: center;
-    background: #ffffff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+    background: #3483eb;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); 
+    border-radius: 10px;
+
 }
 .auth-window h1 {
     font-family: 'Rubik', sans-serif;
     font-size: 28px;
+    color: #DCEDC8;
 
 }
 .input-box {
@@ -65,16 +68,18 @@ p h1{
 
 }
 .input-box span {
-    color: #8c8c8c;
+    color: #222629;
     font-size: 18px;
 }
 .input-box input{
-    margin: 5px;
+    margin: 10px;
     width: 80%;
-    height: 40px;
+    height: 35px;
     border: 0;
-    border-bottom: 1px solid #8c8c8c;
-    outline: 0;  
+    border-radius: 4px;
+    border-bottom: 1px solid #DCEDC8;
+    outline: 0;
+    font-size: 20px;  
 
 }
 .registration-link {
@@ -84,20 +89,21 @@ p h1{
 }
 .registration-link a{
     text-decoration: none;
-    color: #000000;
+    color: #DCEDC8;
 }
 .button-box {
     grid-area: button-box;
 }
 button {
-    margin: 5px;
-    width: 81%;
-    height: 50px;
+    margin: 10px;
+
+    width: 40%;
+    height: 45px;
     border-radius: 40px;
     outline: 0;  
     border: 0;
-    background-color: black;
-    color: white;
+    background-color: #86c232;
+    color: #DCEDC8;
     font-size: 20px;
     
 }
@@ -108,10 +114,17 @@ button:hover {
 }
 
 .info-desk {
+    color: #DCEDC8;
     grid-area: info-desk;
     border: 1px solid black;
-    background-color: #ffffff;
+    background-color: #3483eb;
     box-shadow: 0 0 10px rgba(0,0,0,0.5); 
-    padding: 5px;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 10px;
+
 }
 
+.info-desk p {
+    font-size: 20px;
+}

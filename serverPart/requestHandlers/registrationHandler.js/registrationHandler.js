@@ -1,6 +1,6 @@
 const MongoClient = require("mongodb").MongoClient;
 
-const checkIdenticalEmail = require("./moduls/checkIdenticalEmail").checkIdenticalEmail;
+const checkIdenticalLogin = require("./moduls/checkIdenticalLogin").checkIdenticalLogin;
 
 
 function registration(response, data) {
@@ -16,26 +16,31 @@ function registration(response, data) {
         const db = client.db("eatappdb");
         const collection = db.collection("users");
          
-        checkIdenticalEmail(userData.email, collection).then(() => {
-            collection.insertOne(userData).then(() => {
+        checkIdenticalLogin(userData.login, collection)
+            .then(() => {
 
+                collection.insertOne({ "login": userData.login, 
+                                       "password": userData.password, 
+                                       "dateOfRegistration": new Date(),
+                                       "profileCompleted": false,
+                                       "basicUserInfo": undefined,
+                                    })
+
+                response.setHeader ('Access-Control-Allow-Origin', '*');
                 response.writeHead(200, {"Content-Type": "text/plain"});
                 response.write("User is registrated");
                 response.end();
-                
-                client.close();
-            })
-            .catch(err => {
-                console.log(err)
-                response.writeHead(400, {"Content-Type": "text/plain"});
-                response.write("This email has been used");
-                response.end();
-            })
-                  
-    
-        }).catch(err => console.log(err))
 
-        
+            }).catch(err => {
+                
+                console.log(err)
+
+                response.setHeader ('Access-Control-Allow-Origin', '*');
+                response.writeHead(400, {"Content-Type": "text/plain"});
+                response.write(err);
+                response.end();
+
+            })
     });
 
    

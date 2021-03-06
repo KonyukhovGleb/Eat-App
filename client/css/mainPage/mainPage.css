@@ -1,0 +1,33 @@
+.main-page {
+    display: grid;
+    grid-template-areas: 
+    ".          .               .              ."
+    "user-data  progress-table  progress-table ."
+    ".          progress-table  progress-table ."
+    ".          .               .              .";
+
+    grid-template-rows: 5% 2fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-gap: 10px;
+    margin: 0;
+
+}
+
+.user-data {
+    grid-area: user-data;
+
+    border: 1px solid black;
+}
+
+.progress-table {
+    grid-area: progress-table;
+
+    border: 1px solid black;
+}
+
+li {
+    list-style-type: none;
+    margin-top: 5px;
+}
+
+
